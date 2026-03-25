@@ -20,6 +20,9 @@ This project is a custom-built 3-way audio system designed from scratch, includi
 
 ## 📸 Screenshots
 
+### Full Build
+<img alt="image" src="full_build.png" />
+
 ### PCB Layout
 <img alt="image" src="pcb_layout.png" />
 
