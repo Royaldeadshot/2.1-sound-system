@@ -14,34 +14,38 @@ This project is a custom-built 3-way audio system designed from scratch, includi
 
 - Passive 3-way crossover (2nd order)
 - Custom PCB amplifier
+  - Dual TPA3255 based amplifier
 
 ---
 
 ## 📸 Screenshots
 
 ### PCB Layout
-*(add screenshot here)*
+<img alt="image" src="pcb_layout.png" />
+
 
 ---
 
 ### Schematic
-*(add screenshot here)*
-
+<img alt="image" src="tower_amp_schematic.png" />
+<img alt="image" src="sub_amp_schematic.png" />
 ---
 
 ### 3D Model
-*(add screenshot here)*
-
+<img alt="image" src="amp_enclosure.png" />
+<img alt="image" src="sub_enclosure.png" />
+<img alt="image" src="tower_enclosure.png" />
 ---
 
 ### Crossover Design
-*(add screenshot here)*
-
+<img alt="image" src="crossover_schematic.png" />
 ---
 
 ## ⚙️ How It Works (Short)
 
-The amplifier sends a full-range audio signal to the crossover.
+The Power supply power up the sytem and then 48V and 12V are sent to amp power pins, and then 12v is also used to power up the fans for cooling the HOT TPA3255 chips, then the 5v is sent to bt module
+
+after that we select aux or bt input through the dpdt switch, and the signal goes to the tower amp and a 80hz cutoff is sent to the sub amp, the amp amplify the dignal and then the amplifier sends a full-range audio signal to the crossover in tower speaker and the cutoff freq to sub.
 
 The crossover splits this signal into three parts:
 
@@ -60,37 +64,17 @@ Each driver only receives the frequencies it is meant to play, improving clarity
 
 ## 🧠 Design Choices
 
-- Used a 2nd order crossover (12dB/octave) for better separation  
-- Polypropylene capacitor for tweeter to improve high-frequency clarity  
-- Electrolytic capacitors for mid and woofer to keep cost reasonable  
-- Thick gauge inductors for low resistance and better power handling  
+
+- TPA3255 for 250 watt per channel and 300-600 Watt for sub
+- Used a 2nd order crossover (12dB/octave) for better separation   
+- used a active crossover for sub to save cost
 
 ---
 
 ## 🧾 Components Used
 
-### Capacitors
-- 10µF Polypropylene (Tweeter)
-- 68µF Electrolytic (Mid)
-- 39µF Electrolytic (Woofer)
+BOM list present in the bom.csv in this repo root directory
 
-### Inductors
-- 2.2mH (Woofer)
-- 1.2mH (Mid)
-- 0.22mH (Mid/Tweeter)
-
-### Speakers
-- Woofer: 2 × 4Ω (series → 8Ω)
-- Mid: 4Ω
-- Tweeter: 4Ω
-
----
-
-## ⚠️ Notes
-
-- Inductors should be placed apart and rotated to avoid interference  
-- Ensure proper polarity when wiring drivers  
-- The enclosure design significantly affects final sound quality  
 
 ---
 
@@ -98,7 +82,12 @@ Each driver only receives the frequencies it is meant to play, improving clarity
 
 - [x] Amplifier designed  
 - [x] PCB layout completed  
-- [x] Crossover designed  
+- [x] Crossover designed
+- [X] Input Stage made
+- [X] SUB frequecny cutoff of 80hz made
+- [X] Tuned Enclosure design made
+- [X] Drivers selected
+- [X] BOM made
 - [ ] Assembly  
 - [ ] Testing  
 
